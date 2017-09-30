@@ -2,12 +2,8 @@ package com.app.daoImpl;
 
 import java.sql.Date;
 import java.util.ArrayList;
-
 import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Autowired;
-
-
 import com.app.beans.Activo;
 import com.app.dao.ActivoDao;
 import java.sql.Connection;

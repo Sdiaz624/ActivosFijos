@@ -81,4 +81,39 @@ public class AreaDaoImpl implements AreaDao{
         
     }
 
+    /**
+     * Valida si esxiste una ciudad asociadaa unarea
+     * @param ciudad nombre de la ciudad
+     * @return
+     * @throws Exception 
+     */
+    public boolean validaCiudad(String ciudad) throws Exception {
+        
+        String sql = "SELECT * FROM area WHERE UPPER(ciudad) = UPPER(?)";
+        Connection con= null;
+        ResultSet r;
+        
+        boolean exists = false;
+
+        try {
+            con = dataSource.getConnection();
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1,ciudad);
+            r = ps.executeQuery();
+
+            while (r.next()) {
+                exists = true;
+            }
+            ps.close();
+        }catch(Exception e) {
+            throw e;
+        }finally {
+            if(con!=null) {
+                con.close();
+            }
+        }
+
+        return exists;
+    }
+
 }

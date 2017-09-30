@@ -24,5 +24,13 @@ public interface AreaDao {
          * @throws Exception lanza excepción
          */
 	public void Registrar(Area area) throws Exception;
+        
+        /**
+         * Valida si una ciudad ya esta asociada a un area
+         * @param ciudad
+         * @return
+         * @throws Exception 
+         */
+        public boolean validaCiudad(String ciudad) throws Exception;
 	
 }
