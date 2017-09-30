@@ -18,24 +18,24 @@ public class AreaSerImpl implements AreaSer {
 
 	
 	public ArrayList<Area> ListarTodas() throws Exception {
-		// TODO Auto-generated method stub
-		ArrayList<Area> areas = new ArrayList<Area>();
 		
-		try {
-			areas = daoArea.ListarTodas();
-		}catch(Exception e){
-			throw e;
-		}
-		return areas;
+            ArrayList<Area> areas = new ArrayList<Area>();
+
+            try {
+                    areas = daoArea.ListarTodas();
+            }catch(Exception e){
+                    throw e;
+            }
+            return areas;
 	}
 
-	public void Registrar(String area) throws Exception {
-		// TODO Auto-generated method stub
-		try {
-			daoArea.Registrar(area);
-		}catch(Exception e){
-			throw e;
-		}
+	public void Registrar(Area area) throws Exception {
+		
+            try {
+                    daoArea.Registrar(area);
+            }catch(Exception e){
+                    throw e;
+            }
 		
 	}
 

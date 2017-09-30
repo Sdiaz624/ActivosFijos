@@ -7,29 +7,40 @@ import java.util.ArrayList;
  */
 public class Area {
 
-	private int id;
-	private String ciudad;
-	private ArrayList<Activo> activos;
+    private int id;
+    private String ciudad;
+    private String nombre;
+    private ArrayList<Activo> activos;
 
-        /**
-         * Constructor por defecto
-         */
-	public Area() {
-	
-	}
-	
-        /**
-         * Constructor con parametrso
-         * @param id identificador del area
-         * @param ciudad ciudad en la que esta el area
-         * @param activos activos que tiene el area
-         */
-	public Area(int id, String ciudad, ArrayList<Activo> activos) {
-		super();
-		this.id = id;
-		this.ciudad = ciudad;
-		this.activos = activos;
-	}
+    /**
+     * Constructor por defecto
+     */
+    public Area() {
+
+    }
+
+    /**
+     * Constructor con parametrso
+     * @param id identificador del area
+     * @param ciudad ciudad en la que esta el area
+     * @param nombre nombre del area
+     * @param activos activos que tiene el area
+     */
+    public Area(int id, String ciudad, String nombre, ArrayList<Activo> activos) {
+        this.id = id;
+        this.ciudad = ciudad;
+        this.nombre = nombre;
+        this.activos = activos;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
 	public int getId() {
 		return id;
 	}

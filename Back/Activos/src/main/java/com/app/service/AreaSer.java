@@ -14,14 +14,14 @@ import com.app.beans.Area;
 public interface AreaSer {
 
 	
-	@GET
+    @GET
     @Path("/Consulta")
     @Produces({"application/json;charset=UTF-8"})
-	public ArrayList<Area> ListarTodas() throws Exception;
+    public ArrayList<Area> ListarTodas() throws Exception;
 	
-	@POST
+    @POST
     @Path("/Registrar")
     @Consumes({"application/json;charset=UTF-8"})
-	public void Registrar(String area) throws Exception;
+    public void Registrar(Area area) throws Exception;
 	
 }

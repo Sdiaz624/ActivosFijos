@@ -1,5 +1,7 @@
 package com.app.beans;
 
+import java.util.ArrayList;
+
 /**
  * Objeto persona
  * @author Sergio
@@ -8,6 +10,7 @@ public class Persona {
     
     private int id;
     private String nombre;
+    private ArrayList<Activo> activos;
 
     /**
      * Constructor por defecto
@@ -19,14 +22,14 @@ public class Persona {
      * Constructor con parametros
      * @param id identificador de la persona
      * @param nombre nombre de la persona
+     * @param activos lista de activos de la persona
      */
-    public Persona(int id, String nombre) {
+    public Persona(int id, String nombre, ArrayList<Activo> activos) {    
         this.id = id;
         this.nombre = nombre;
+        this.activos = activos;
     }
 
-    
-    
     /**
      * @return the id
      */

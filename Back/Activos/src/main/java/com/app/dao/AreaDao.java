@@ -20,9 +20,9 @@ public interface AreaDao {
 	
         /**
          * Registra un nuevo area
-         * @param area nombre del area
+         * @param area Objeto del tipo area
          * @throws Exception lanza excepción
          */
-	public void Registrar(String area) throws Exception;
+	public void Registrar(Area area) throws Exception;
 	
 }
