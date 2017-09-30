@@ -4,8 +4,9 @@ import java.sql.Date;
 
 public class Activo {
 	
-	private int id; // numero interno inventario
+	private int id; 
 	private String nombre;
+	private int numeroInt;
 	private String Description;
 	private String tipo;
 	private String serial;
@@ -22,11 +23,14 @@ public class Activo {
 	public Activo() {
 	}
 
-	public Activo(int id, String nombre, String description, String tipo, String serial, float peso, float alto,
-			float largo, float valor, Date fechaCompra, Date fechaBaja, String estado, String color) {
+	
+
+	public Activo(int id, String nombre, int numeroInt, String description, String tipo, String serial, float peso,
+			float alto, float largo, float valor, Date fechaCompra, Date fechaBaja, String estado, String color) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
+		this.numeroInt = numeroInt;
 		Description = description;
 		this.tipo = tipo;
 		this.serial = serial;
@@ -39,6 +43,17 @@ public class Activo {
 		this.estado = estado;
 		this.color = color;
 	}
+
+
+
+	public int getNumeroInt() {
+		return numeroInt;
+	}
+
+	public void setNumeroInt(int numeroInt) {
+		this.numeroInt = numeroInt;
+	}
+
 	
 	public int getId() {
 		return id;
