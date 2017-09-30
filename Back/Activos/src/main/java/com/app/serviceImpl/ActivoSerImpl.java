@@ -29,9 +29,12 @@ public class ActivoSerImpl implements ActivoSer{
      */
     public void Registrar(Activo activo) throws Exception {
        
+                
         try {
             if(!daoActivo.validaNumInterno(activo.getNumeroInt())){
-                daoActivo.Registrar(activo);
+                if (activo.getFechaCompra().before(activo.getFechaBaja())){
+                    daoActivo.Registrar(activo);
+                }               
             }
         }catch(Exception e){
                 throw e;
@@ -47,7 +50,9 @@ public class ActivoSerImpl implements ActivoSer{
     public void Actualizar(Activo activo) throws Exception {
 
         try {
+            if (activo.getFechaCompra().before(activo.getFechaBaja())){
                 daoActivo.Actualizar(activo);
+            }               
         }catch(Exception e){
                 throw e;
         }
