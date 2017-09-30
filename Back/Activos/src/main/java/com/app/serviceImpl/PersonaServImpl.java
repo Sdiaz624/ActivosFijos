@@ -2,6 +2,7 @@ package com.app.serviceImpl;
 
 import java.util.ArrayList;
 
+import com.app.beans.Activo;
 import com.app.beans.Persona;
 import com.app.dao.ActivoDao;
 import com.app.dao.PersonaDao;
@@ -18,11 +19,23 @@ public class PersonaServImpl implements PersonaSer{
 	
 	public ArrayList<Persona> ListarTodas() throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Persona> personas = new ArrayList<Persona>();
+		
+		try {
+			personas = daoPersona.ListarTodas();
+		}catch(Exception e){
+			throw e;
+		}
+		return personas;
 	}
 
 	public void Registrar(Persona persona) throws Exception {
 		// TODO Auto-generated method stub
+		try {
+			daoPersona.Registrar(persona);
+		}catch(Exception e){
+			throw e;
+		}
 		
 	}
 

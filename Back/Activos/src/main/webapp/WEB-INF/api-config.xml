@@ -20,7 +20,7 @@
 
     <bean id="dataSource" class= "org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://localhost:3306/tiendasadmin"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/activosfijos"></property>
 		<property name="username" value="root"></property>
 		<property name="password" value=""></property>
     </bean>
@@ -39,8 +39,9 @@
 	       
     <jaxrs:server id="services" address="/">
         <jaxrs:serviceBeans>
-            <ref bean="TiendaBean"/>
-            <ref bean="ProductoBean"/>
+            <ref bean="ActivoBean"/>
+            <ref bean="AreaBean"/>
+            <ref bean="PersonaBean"/>
         </jaxrs:serviceBeans>
         <jaxrs:providers>
             <ref bean="jsonProvider"/>
