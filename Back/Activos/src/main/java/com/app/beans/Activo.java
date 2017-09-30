@@ -1,7 +1,10 @@
 package com.app.beans;
 
 import java.sql.Date;
-
+/**
+ * Objeto activo
+ * @author Sergio
+ */
 public class Activo {
 	
 	private int id; 
@@ -18,20 +21,40 @@ public class Activo {
 	private Date fechaBaja;
 	private String estado;
 	private String color;
+        private int persona;
+        private int area;
 	
-		
+	/**
+         * Constructor por defecto
+         */	
 	public Activo() {
 	}
 
 	
-
-	public Activo(int id, String nombre, int numeroInt, String description, String tipo, String serial, float peso,
-			float alto, float largo, float valor, Date fechaCompra, Date fechaBaja, String estado, String color) {
-		super();
+        /**
+         * Constructor con parametors
+         * @param id identificador del activo
+         * @param nombre nombre delactivo
+         * @param numeroInt numero interno del activo
+         * @param Description descripción del activo
+         * @param tipo tipo de activo 
+         * @param serial serial del activo
+         * @param peso peso del activo
+         * @param alto altura del activo
+         * @param largo largo del activo
+         * @param valor valor delactivo
+         * @param fechaCompra fecha de compra delactivo
+         * @param fechaBaja fecha de baja del activo
+         * @param estado (activo, dado de baja, en reparación, disponible, asignado),
+         * @param color color del activo
+         * @param persona 
+         * @param area
+         */    
+	public Activo(int id, String nombre, int numeroInt, String Description, String tipo, String serial, float peso, float alto, float largo, float valor, Date fechaCompra, Date fechaBaja, String estado, String color, int persona, int area) {
 		this.id = id;
 		this.nombre = nombre;
 		this.numeroInt = numeroInt;
-		Description = description;
+		this.Description = Description;
 		this.tipo = tipo;
 		this.serial = serial;
 		this.peso = peso;
@@ -42,9 +65,27 @@ public class Activo {
 		this.fechaBaja = fechaBaja;
 		this.estado = estado;
 		this.color = color;
+		this.persona = persona;
+                this.area = area;
 	}
 
+    public int getPersona() {
+        return persona;
+    }
 
+    public void setPersona(int persona) {
+        this.persona = persona;
+    }
+
+    public int getArea() {
+        return area;
+    }
+
+    public void setArea(int area) {
+        this.area = area;
+    }
+
+        
 
 	public int getNumeroInt() {
 		return numeroInt;

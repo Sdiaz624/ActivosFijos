@@ -82,21 +82,6 @@ public class ActivoSerImpl implements ActivoSer{
 	/**
 	 * 
 	 */
-	public ArrayList<Activo> ListarFecha(Date fecha) throws Exception {
-		// TODO Auto-generated method stub
-		ArrayList<Activo> activos = new ArrayList<Activo>();
-		
-		try {
-			activos = daoActivo.ListarFecha(fecha);
-		}catch(Exception e){
-			throw e;
-		}
-		return activos;
-	}
-
-	/**
-	 * 
-	 */
 	public ArrayList<Activo> ListarSerial(String serial) throws Exception {
 		// TODO Auto-generated method stub
 		ArrayList<Activo> activos = new ArrayList<Activo>();
@@ -108,5 +93,16 @@ public class ActivoSerImpl implements ActivoSer{
 		}
 		return activos;
 	}
+
+        public ArrayList<Activo> ListarFecha(Date fechaIni, Date fechaFin) throws Exception {
+                ArrayList<Activo> activos = new ArrayList<Activo>();
+		
+		try {
+			activos = daoActivo.ListarFecha(fechaIni,fechaFin);
+		}catch(Exception e){
+			throw e;
+		}
+		return activos;
+        }   
 
 }

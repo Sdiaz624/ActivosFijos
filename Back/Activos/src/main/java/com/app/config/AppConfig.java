@@ -16,24 +16,46 @@ import com.app.serviceImpl.ActivoSerImpl;
 import com.app.serviceImpl.AreaSerImpl;
 import com.app.serviceImpl.PersonaServImpl;
 
+/**
+ * 
+ * @author Sergio
+ */
+
 @Configuration
 public class AppConfig {
 
+    
+        /**
+         * Obtiene un objeto de tipo ActivoDao
+         * @return 
+         */
 	@Bean
 	public ActivoDao ActivoBeanDao() {
 		return new ActivoDaoImpl();
 	}
-	
+        
+        /**
+         * Obtiene un objeto de tipo AreaDao
+         * @return 
+         */
 	@Bean
 	public AreaDao AreaBeanDao() {
 		return new AreaDaoImpl();
 	}
 	
+        /**
+         * Obtiene un objeto de tipo PersonaDao
+         * @return 
+         */
 	@Bean
 	public PersonaDao PersonaBeanDao() {
 		return new PersonaDaoImpl();
 	}
 	
+        /**
+         * Obtiene un objeto ActivoSer
+         * @return 
+         */
 	@Bean
 	public ActivoSer ActivoBean() {
 		
@@ -42,6 +64,10 @@ public class AppConfig {
 		return activo;
 	}
 	
+        /**
+         * Obtiene un objeto de tipo AreaSer
+         * @return 
+         */
 	@Bean
 	public AreaSer AreaBean() {
 		
@@ -50,6 +76,11 @@ public class AppConfig {
 		return area;
 	}
 	
+        
+        /**
+         * Obtiene un objeto de tipo PersonaSer
+         * @return 
+         */
 	@Bean
 	public PersonaSer PersonaBean() {
 		

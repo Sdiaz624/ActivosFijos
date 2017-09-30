@@ -12,9 +12,8 @@ public class AreaDaoImpl implements AreaDao{
 		return null;
 	}
 
-	public void Registrar(Area area) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
+        public void Registrar(String area) throws Exception {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
 
 }

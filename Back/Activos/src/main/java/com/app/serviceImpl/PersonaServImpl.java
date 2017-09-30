@@ -29,7 +29,7 @@ public class PersonaServImpl implements PersonaSer{
 		return personas;
 	}
 
-	public void Registrar(Persona persona) throws Exception {
+	public void Registrar(String persona) throws Exception {
 		// TODO Auto-generated method stub
 		try {
 			daoPersona.Registrar(persona);

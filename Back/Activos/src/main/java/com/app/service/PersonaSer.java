@@ -22,6 +22,6 @@ public interface PersonaSer {
 	@POST
     @Path("/Registrar")
     @Consumes({"application/json;charset=UTF-8"})
-	public void Registrar(Persona persona) throws Exception;
+	public void Registrar(String persona) throws Exception;
 	
 }

@@ -11,9 +11,8 @@ public class PersonaDaoImpl implements PersonaDao {
 		return null;
 	}
 
-	public void Registrar(Persona persona) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
+        public void Registrar(String persona) throws Exception {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
 
 }

@@ -16,33 +16,34 @@ import com.app.beans.Activo;
 public interface ActivoSer {
 
 	@POST
-    @Path("/Registrar")
-    @Consumes({"application/json;charset=UTF-8"})
+        @Path("/Registrar")
+        @Consumes({"application/json;charset=UTF-8"})
 	public void Registrar(Activo activo) throws Exception; 
 	
 	@POST
-    @Path("/Actualizar")
-    @Consumes({"application/json;charset=UTF-8"})
+        @Path("/Actualizar")
+        @Consumes({"application/json;charset=UTF-8"})
 	public void Actualizar(Activo activo) throws Exception;
 	
 	@GET
-    @Path("/Consulta")
-    @Produces({"application/json;charset=UTF-8"})
+        @Path("/Consulta")
+        @Produces({"application/json;charset=UTF-8"})
 	public ArrayList<Activo> ListarTodas() throws Exception;
 			
 	@GET
-    @Path("/ConsultaTipo/{tipo}")
-    @Produces({"application/json;charset=UTF-8"})
+        @Path("/ConsultaTipo/{tipo}")
+        @Produces({"application/json;charset=UTF-8"})
 	public ArrayList<Activo> ListarTipo(@PathParam("tipo") String tipo) throws Exception;
 	
 	@GET
-    @Path("/ConsultaFecha/{fecha}")
-    @Produces({"application/json;charset=UTF-8"})
-	public ArrayList<Activo> ListarFecha(@PathParam("fecha") Date fecha) throws Exception;
+        @Path("/ConsultaFecha/{fecha}")
+        @Produces({"application/json;charset=UTF-8"})
+	public ArrayList<Activo> ListarFecha(@PathParam("fecha") Date fechaIni,
+                                             @PathParam("fecha") Date fechaFin) throws Exception;
 	
 	@GET
-    @Path("/ConsultaSerial/{serial}")
-    @Produces({"application/json;charset=UTF-8"})
+        @Path("/ConsultaSerial/{serial}")
+        @Produces({"application/json;charset=UTF-8"})
 	public ArrayList<Activo> ListarSerial(@PathParam("serial") String serial) throws Exception;
 	
 }

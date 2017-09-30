@@ -29,7 +29,7 @@ public class AreaSerImpl implements AreaSer {
 		return areas;
 	}
 
-	public void Registrar(Area area) throws Exception {
+	public void Registrar(String area) throws Exception {
 		// TODO Auto-generated method stub
 		try {
 			daoArea.Registrar(area);
