@@ -38,7 +38,7 @@ public class AreaDaoImpl implements AreaDao{
 
                 Area area = new Area();
                 area.setId(r.getInt("id"));
-                area.setCiudad(r.getString("nombre"));
+                area.setNombre(r.getString("nombre"));
                 area.setCiudad(r.getString("ciudad"));
                 areas.add(area);
             }
@@ -82,10 +82,10 @@ public class AreaDaoImpl implements AreaDao{
     }
 
     /**
-     * Valida si esxiste una ciudad asociadaa unarea
+     * Valida si esxiste una ciudad asociada a un area
      * @param ciudad nombre de la ciudad
-     * @return
-     * @throws Exception 
+     * @return Retorna true si esta asociada a un area false sino
+     * @throws Exception lanza excepción
      */
     public boolean validaCiudad(String ciudad) throws Exception {
         

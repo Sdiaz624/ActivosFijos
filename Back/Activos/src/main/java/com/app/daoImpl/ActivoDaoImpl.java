@@ -352,65 +352,65 @@ public class ActivoDaoImpl implements ActivoDao {
          * @return lista de todos los activos de un tipo
          * @throws Exception lanza excepción
          */
-	public ArrayList<Activo> ListarTipo(String tipo) throws Exception {
-		
-             
-            ArrayList<Activo> activos = new ArrayList<Activo>();
-		
-            String sql = "SELECT * FROM activos WHERE Tipo = ? ";
-            Connection con= null;
-            ResultSet r;
-                try {
-                    con = dataSource.getConnection();
-                    PreparedStatement ps = con.prepareStatement(sql);
-                    ps.setString(1,tipo);
-                    r = ps.executeQuery();
-						
-			while (r.next()) {
-				
-				Activo activo = new Activo();
-								
-				activo.setId(r.getInt("id"));
-				activo.setNombre(r.getString("Nombre"));
-                                activo.setNumeroInt(r.getInt("NumeroInt"));
-				activo.setDescription(r.getString("Descripcion"));
-                                activo.setTipo(r.getString("Tipo"));
-                                activo.setSerial(r.getString("Serial"));
-                                activo.setPeso(r.getFloat("Peso"));
-                                activo.setAlto(r.getFloat("Alto"));
-                                activo.setLargo(r.getFloat("Largo"));
-                                activo.setValor(r.getFloat("Valor"));
-                                activo.setFechaBaja(r.getDate("FechaBaja"));
-                                activo.setFechaCompra(r.getDate("FechaCompra"));
-				activo.setEstado(r.getString("Estado"));
-                                activo.setColor(r.getString("Color"));
-                                activo.setPersona(r.getInt("Persona"));
-                                activo.setArea(r.getInt("Area"));
-				
-				activos.add(activo);
-			}
-			ps.close();
-		}catch(Exception e) {
-			throw e;
-		}finally {
-			if(con!=null) {
-				con.close();
-			}
-		}
-				
-		return activos;            
-            
-	}
+public ArrayList<Activo> ListarTipo(String tipo) throws Exception {
 
-        /**
-         * permite listar los activos fijos por un rango de fecha
-         * de compra 
-         * @param fechaIni fecha de inicio de rango de compra
-         * @param fechaFin fecha de fin de rango de compra
-         * @return lista de todos los activos de un rango de fechas
-         * @throws Exception lanza excepción
-         */
-	public ArrayList<Activo> ListarFecha(Date fechaIni, Date fechaFin) throws Exception {
+
+    ArrayList<Activo> activos = new ArrayList<Activo>();
+
+    String sql = "SELECT * FROM activos WHERE Tipo = ? ";
+    Connection con= null;
+    ResultSet r;
+        try {
+            con = dataSource.getConnection();
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1,tipo);
+            r = ps.executeQuery();
+
+                while (r.next()) {
+
+                        Activo activo = new Activo();
+
+                        activo.setId(r.getInt("id"));
+                        activo.setNombre(r.getString("Nombre"));
+                        activo.setNumeroInt(r.getInt("NumeroInt"));
+                        activo.setDescription(r.getString("Descripcion"));
+                        activo.setTipo(r.getString("Tipo"));
+                        activo.setSerial(r.getString("Serial"));
+                        activo.setPeso(r.getFloat("Peso"));
+                        activo.setAlto(r.getFloat("Alto"));
+                        activo.setLargo(r.getFloat("Largo"));
+                        activo.setValor(r.getFloat("Valor"));
+                        activo.setFechaBaja(r.getDate("FechaBaja"));
+                        activo.setFechaCompra(r.getDate("FechaCompra"));
+                        activo.setEstado(r.getString("Estado"));
+                        activo.setColor(r.getString("Color"));
+                        activo.setPersona(r.getInt("Persona"));
+                        activo.setArea(r.getInt("Area"));
+
+                        activos.add(activo);
+                }
+                ps.close();
+        }catch(Exception e) {
+                throw e;
+        }finally {
+                if(con!=null) {
+                        con.close();
+                }
+        }
+
+        return activos;            
+
+}
+
+/**
+ * permite listar los activos fijos por un rango de fecha
+ * de compra 
+ * @param fechaIni fecha de inicio de rango de compra
+ * @param fechaFin fecha de fin de rango de compra
+ * @return lista de todos los activos de un rango de fechas
+ * @throws Exception lanza excepción
+ */
+public ArrayList<Activo> ListarFecha(Date fechaIni, Date fechaFin) throws Exception {
 		// TODO Auto-generated method stub
 	 
             ArrayList<Activo> activos = new ArrayList<Activo>();
@@ -461,60 +461,95 @@ public class ActivoDaoImpl implements ActivoDao {
             
 	}
 
-        /**
-         * Permite listar todos los activos fijos por serial
-         * @param serial serial quese desea buscar
-         * @return lista de todos los activos de un serial
-         * @throws Exception lanza excepción
-         */
-	public ArrayList<Activo> ListarSerial(String serial) throws Exception {
-		
-            ArrayList<Activo> activos = new ArrayList<Activo>();
-		
-            String sql = "SELECT * FROM activos WHERE Serial = ? ";
-            Connection con= null;
-            ResultSet r;
-                try {
-                    con = dataSource.getConnection();
-                    PreparedStatement ps = con.prepareStatement(sql);
-                    ps.setString(1,serial);
-                    
-                    r = ps.executeQuery();
-						
-			while (r.next()) {
-				
-				Activo activo = new Activo();
-								
-				activo.setId(r.getInt("id"));
-				activo.setNombre(r.getString("Nombre"));
-                                activo.setNumeroInt(r.getInt("NumeroInt"));
-				activo.setDescription(r.getString("Descripcion"));
-                                activo.setTipo(r.getString("Tipo"));
-                                activo.setSerial(r.getString("Serial"));
-                                activo.setPeso(r.getFloat("Peso"));
-                                activo.setAlto(r.getFloat("Alto"));
-                                activo.setLargo(r.getFloat("Largo"));
-                                activo.setValor(r.getFloat("Valor"));
-                                activo.setFechaBaja(r.getDate("FechaBaja"));
-                                activo.setFechaCompra(r.getDate("FechaCompra"));
-				activo.setEstado(r.getString("Estado"));
-                                activo.setColor(r.getString("Color"));
-                                activo.setPersona(r.getInt("Persona"));
-                                activo.setArea(r.getInt("Area"));
-				
-				activos.add(activo);
-			}
-			ps.close();
-		}catch(Exception e) {
-			throw e;
-		}finally {
-			if(con!=null) {
-				con.close();
-			}
-		}
-				
-            return activos;            
+/**
+ * Permite listar todos los activos fijos por serial
+ * @param serial serial quese desea buscar
+ * @return lista de todos los activos de un serial
+ * @throws Exception lanza excepción
+ */
+public ArrayList<Activo> ListarSerial(String serial) throws Exception {
+
+    ArrayList<Activo> activos = new ArrayList<Activo>();
+
+    String sql = "SELECT * FROM activos WHERE Serial = ? ";
+    Connection con= null;
+    ResultSet r;
+        try {
+            con = dataSource.getConnection();
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1,serial);
+
+            r = ps.executeQuery();
+
+                while (r.next()) {
+
+                        Activo activo = new Activo();
+
+                        activo.setId(r.getInt("id"));
+                        activo.setNombre(r.getString("Nombre"));
+                        activo.setNumeroInt(r.getInt("NumeroInt"));
+                        activo.setDescription(r.getString("Descripcion"));
+                        activo.setTipo(r.getString("Tipo"));
+                        activo.setSerial(r.getString("Serial"));
+                        activo.setPeso(r.getFloat("Peso"));
+                        activo.setAlto(r.getFloat("Alto"));
+                        activo.setLargo(r.getFloat("Largo"));
+                        activo.setValor(r.getFloat("Valor"));
+                        activo.setFechaBaja(r.getDate("FechaBaja"));
+                        activo.setFechaCompra(r.getDate("FechaCompra"));
+                        activo.setEstado(r.getString("Estado"));
+                        activo.setColor(r.getString("Color"));
+                        activo.setPersona(r.getInt("Persona"));
+                        activo.setArea(r.getInt("Area"));
+
+                        activos.add(activo);
+                }
+                ps.close();
+        }catch(Exception e) {
+                throw e;
+        }finally {
+                if(con!=null) {
+                        con.close();
+                }
+        }
+
+        return activos;            
             
-	}
+    }
+    
+/**
+ * Valida que el numero interno no se encuentre en la base de datos
+ * @param Numero numero internoa validar 
+ * @return Retorna true si esta asociada a un activo
+ * @throws Exception Lanza excepcion
+ */
+public boolean validaNumInterno(int Numero) throws Exception {
+        
+    String sql = "SELECT * FROM activos WHERE  NumeroInt = ?";
+    Connection con= null;
+    ResultSet r;
+
+    boolean exists = false;
+
+    try {
+        con = dataSource.getConnection();
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setInt(1,Numero);
+        r = ps.executeQuery();
+
+        while (r.next()) {
+            exists = true;
+        }
+        ps.close();
+    }catch(Exception e) {
+        throw e;
+    }finally {
+        if(con!=null) {
+            con.close();
+        }
+    }
+
+    return exists;
+}
 
 }

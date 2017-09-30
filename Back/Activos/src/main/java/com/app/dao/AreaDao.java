@@ -27,9 +27,9 @@ public interface AreaDao {
         
         /**
          * Valida si una ciudad ya esta asociada a un area
-         * @param ciudad
-         * @return
-         * @throws Exception 
+         * @param ciudad ciudad a validar
+         * @return 
+         * @throws Exception lanza excepción
          */
         public boolean validaCiudad(String ciudad) throws Exception;
 	

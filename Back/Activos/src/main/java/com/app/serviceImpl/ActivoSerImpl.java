@@ -30,7 +30,9 @@ public class ActivoSerImpl implements ActivoSer{
     public void Registrar(Activo activo) throws Exception {
        
         try {
+            if(!daoActivo.validaNumInterno(activo.getNumeroInt())){
                 daoActivo.Registrar(activo);
+            }
         }catch(Exception e){
                 throw e;
         }

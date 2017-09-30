@@ -2,9 +2,7 @@ package com.app.serviceImpl;
 
 import java.util.ArrayList;
 
-import com.app.beans.Activo;
 import com.app.beans.Persona;
-import com.app.dao.ActivoDao;
 import com.app.dao.PersonaDao;
 import com.app.service.PersonaSer;
 
@@ -41,7 +39,7 @@ public class PersonaServImpl implements PersonaSer{
             return personas;
     }
     
-    /**
+        /**
      * Registra una nueva persona 
      * @param persona nombre de la persona
      * @throws Exception lanza excepción
