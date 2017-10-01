@@ -68,7 +68,7 @@
                                     <li><a onclick="registrarActivo()">Registrar</a></li>
                                     <li><a onclick="actualizarActivo()">Actualizar</a></li>
                                     <li><a onclick="listarActivo()">Listar todas</a></li>
-                                    <li><a onclick="listarPorTipo()">Listar Por Serie</a></li>
+                                    <li><a onclick="listarPorSerie()">Listar Por Serie</a></li>
                                     <li><a onclick="listarPorFecha()">Listar Por Fecha</a></li>
                                     <li><a onclick="listarPorTipo()">Listar Por Tipo</a></li>                                    
                                 </ul>

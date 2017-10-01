@@ -6,12 +6,23 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<div>
+    <h2 align="center"> Listar por serie </h2>
+    <form class="form-horizontal" method="post" action="jsp/Logica/ListarPorSerie.jsp" >
+        <div id="tab1" >
+                   
+            <div class="form-group">
+                <label class="col-md-2 control-label">Serie</label>
+                <div class="col-md-10">
+                    <input type="Text" class="form-control" name="serie" placeholder=""   required> 
+                </div>
+            </div>           
+        </div>              
+                  
+        <center>
+            <button type="submit" class="btn btn-default">Listar</button>
+        </center>
+            
+    </form>
+
+</div>
