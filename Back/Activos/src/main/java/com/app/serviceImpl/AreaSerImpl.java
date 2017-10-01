@@ -3,8 +3,6 @@ package com.app.serviceImpl;
 import java.util.ArrayList;
 
 import com.app.beans.Area;
-import com.app.beans.Persona;
-import com.app.dao.ActivoDao;
 import com.app.dao.AreaDao;
 import com.app.service.AreaSer;
 
@@ -50,6 +48,7 @@ public class AreaSerImpl implements AreaSer {
      */
     public boolean Registrar(Area area) throws Exception {
 
+        System.out.println("registrar area");
         try {
             if(!daoArea.validaCiudad(area.getCiudad())){
                 daoArea.Registrar(area);
