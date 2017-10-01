@@ -3,67 +3,60 @@
     Created on : 30/09/2017, 07:11:19 PM
     Author     : Sergio
 --%>
+<div>
+    <h2 align="center"> Listar por fechas </h2>
+    <form class="form-horizontal" method="post" action="jsp/Logica/ListarPorFecha.jsp" >
+        <div id="tab1" >
 
-<%@page import="org.json.JSONArray"%>
-<%@page import="org.json.JSONObject"%>
-<%@page import="java.io.InputStream"%>
-<%@page import="java.io.BufferedInputStream"%>
-<%@page import="java.io.OutputStream"%>
-<%@page import="java.io.InputStreamReader"%>
-<%@page import="java.io.BufferedReader"%>
-<%@page import="java.net.HttpURLConnection"%>
-<%@page import="java.net.URL"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Serie</label>
+                <div class="container">
+                    <div class="row">
+                        <div class='col-sm-6'>
+                            <div class="form-group">
+                                <div class='input-group date' id='datetimepicker1'>
+                                    <input type='text' class="form-control" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            $(function () {
+                                $('#datetimepicker1').datetimepicker();
+                            });
+                        </script>
+                    </div>
+                </div>
+                <label class="col-md-2 control-label">Serie</label>
+                <div class="container">
+                    <div class="row">
+                        <div class='col-sm-6'>
+                            <div class="form-group">
+                                <div class='input-group date' id='datetimepicker1'>
+                                    <input type='text' class="form-control" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            $(function () {
+                                $('#datetimepicker1').datetimepicker();
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>           
+        </div>              
 
+        <center>
+            <button type="submit" class="btn btn-default">Listar</button>
+        </center>
 
-<%
-    
-    URL url = new URL("http://localhost:8080/Activos/Activo/Consulta");
-    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-    conn.setDoOutput(true);
-    conn.setDoInput(true);
-    conn.setRequestMethod("GET");
-    conn.setRequestProperty("Content-Type", "application/json");    
-    conn.setRequestProperty("Accept", "application/json");
-    JSONArray jsonObj = null;
-          
-    
-    if (conn.getResponseCode()== HttpURLConnection.HTTP_OK) {
-            
-        BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream()),"UTF-8"));      
-        String line;
-        StringBuilder jsonString = new StringBuilder();
-        %>
-        <table class="table">
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Ciudad</th>
-            </tr>    
-        <%
-        String output = null;
-        while ((line = br.readLine()) != null) {
-            int i = line.indexOf("[");
-            line = line.substring(i);
-            jsonObj = new JSONArray(line);    
-        }
-        for (int i = 0; i<jsonObj.length();i++){
-            %>
-            <tr>
-                <th><%=jsonObj.getJSONObject(i).getInt("id")%></th>
-                <th><%=jsonObj.getJSONObject(i).getString("nombre")%></th>
-                <th><%=jsonObj.getJSONObject(i).getString("ciudad")%></th>
-            </tr>              
-            <%
-        }
-        %>    
-        </table>
-         <%  
-        br.close();
-    }else{
-        %><script> alert("Error, Intente nuevamente");</script>
-          <script> location.href = "/index.jsp";</script><%
-    }  
-    conn.disconnect();
-%>
+    </form>
+
+</div>
+

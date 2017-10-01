@@ -11,6 +11,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 import com.app.beans.Activo;
+import javax.ws.rs.QueryParam;
 
 @Path("/Activo")
 public interface ActivoSer {
@@ -36,10 +37,10 @@ public interface ActivoSer {
 	public ArrayList<Activo> ListarTipo(@PathParam("tipo") String tipo) throws Exception;
 	
 	@GET
-        @Path("/ConsultaFecha/{fecha}")
+        @Path("/ConsultaFecha")
         @Produces({"application/json;charset=UTF-8"})
-	public ArrayList<Activo> ListarFecha(@PathParam("fecha") Date fechaIni,
-                                             @PathParam("fecha") Date fechaFin) throws Exception;
+	public ArrayList<Activo> ListarFecha(@QueryParam("fechaIni") Date fechaIni,
+                                             @QueryParam("fechaFin") Date fechaFin) throws Exception;
 	
 	@GET
         @Path("/ConsultaSerial/{serial}")
