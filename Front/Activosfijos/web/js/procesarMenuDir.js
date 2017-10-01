@@ -1,9 +1,4 @@
 
-function loading(rta) {
-       $(rta).html("<div class='row'><div class=' col-md-offset-5'><img src='images/cargando1.gif' width='500' height='500' /></div>");
-
-}
-
 function ajax2(url, datos, rta) {
     var ajax = $.get(url, datos, function (respuesta) {
         $(rta).html(respuesta);
@@ -23,118 +18,97 @@ function ajax(url, datos, rta) {
 
 function registrarArea() {
 
-    var url = "jsp/RegistrarArea.jsp";
+    var url = "jsp/Gui/RegistrarArea.jsp";
     var datos = {};
     var rta = "#ajax";
-    loading(rta);
     ajax2(url, datos, rta);
 
 }
 
 function listarArea() {
 
-    var url = "jsp/ListarArea.jsp";
+    var url = "jsp/Gui/ListarArea.jsp";
     var datos = {};
     var rta = "#ajax";
-    loading(rta);
     ajax2(url, datos, rta);
 
 }
 
 function registrarPersona() {
 
-    var url = "jsp/RegistrarPersona.jsp";
+    var url = "jsp/Gui/RegistrarPersona.jsp";
     var datos = {};
     var rta = "#ajax";
-    loading(rta);
     ajax2(url, datos, rta);
 
 }
 
 function listarPersona() {
 
-    var url = "jsp/ListarPersona.jsp";
+    var url = "jsp/Gui/ListarPersona.jsp";
     var datos = {};
     var rta = "#ajax";
-    loading(rta);
     ajax2(url, datos, rta);
 
 }
 
 function registrarActivo() {
-
-    var url = "jsp/RegistrarActivo.jsp";
+         
+    var url = "jsp/Gui/RegistrarActivo.jsp";
     var datos = {};
     var rta = "#ajax";
-    loading(rta);
-    ajax2(url, datos, rta);
-
-}
-
-function registrarActivo() {
-
-    var url = "jsp/RegistrarActivo.jsp";
-    var datos = {};
-    var rta = "#ajax";
-    loading(rta);
     ajax2(url, datos, rta);
 
 }
 
 function actualizarActivo() {
 
-    var url = "jsp/actualizarActivo.jsp";
+    var url = "jsp/Gui/ActualizarActivo.jsp";
     var datos = {};
     var rta = "#ajax";
-    loading(rta);
     ajax2(url, datos, rta);
 
 }
 
 function listarActivo() {
 
-    var url = "jsp/ListarActivo.jsp";
+    var url = "jsp/Gui/ListarActivo.jsp";
     var datos = {};
     var rta = "#ajax";
-    loading(rta);
     ajax2(url, datos, rta);
 
 }
 
-
 function listarPorSerie() {
 
-    var url = "jsp/ListarPorSerie.jsp";
+    var url = "jsp/Gui/ListarPorSerie.jsp";
     var datos = {};
     var rta = "#ajax";
-    loading(rta);
     ajax2(url, datos, rta);
 
 }
 
 function listarPorTipo() {
 
-    var url = "jsp/ListarPorTipo.jsp";
+    var url = "jsp/Gui/ListarPorTipo.jsp";
     var datos = {};
     var rta = "#ajax";
-    loading(rta);
     ajax2(url, datos, rta);
 
 }
 
 function listarPorFecha() {
 
-    var url = "jsp/ListarPorFecha.jsp";
+    var url = "jsp/Gui/ListarPorFecha.jsp";
     var datos = {};
     var rta = "#ajax";
-    loading(rta);
     ajax2(url, datos, rta);
 
 }
 
 function mioferta() {
 
-    var url = "Egresado/verOferta.jsp";
+    var url = "Egresado/Gui/verOferta.jsp";
     var id = document.getElementById("nombre").value;
     var nombre = document.getElementById("nombre").value;
     var nit = document.getElementById("nit").value;
