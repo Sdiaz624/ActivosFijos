@@ -18,11 +18,82 @@ function ajax(url, datos, rta) {
 }
 
 /* Principal -----------------------------------------------------------------*/
-/* Egresado -----------------------------------------------------------------*/
 
-function recuperar() {
 
-    var url = "jsp/cambiarContra.jsp";
+
+function registrarArea() {
+
+    var url = "jsp/RegistrarArea.jsp";
+    var datos = {};
+    var rta = "#ajax";
+    loading(rta);
+    ajax2(url, datos, rta);
+
+}
+
+function listarArea() {
+
+    var url = "jsp/ListarArea.jsp";
+    var datos = {};
+    var rta = "#ajax";
+    loading(rta);
+    ajax2(url, datos, rta);
+
+}
+
+function registrarPersona() {
+
+    var url = "jsp/RegistrarPersona.jsp";
+    var datos = {};
+    var rta = "#ajax";
+    loading(rta);
+    ajax2(url, datos, rta);
+
+}
+
+function listarPersona() {
+
+    var url = "jsp/ListarPersona.jsp";
+    var datos = {};
+    var rta = "#ajax";
+    loading(rta);
+    ajax2(url, datos, rta);
+
+}
+
+function registrarActivo() {
+
+    var url = "jsp/RegistrarActivo.jsp";
+    var datos = {};
+    var rta = "#ajax";
+    loading(rta);
+    ajax2(url, datos, rta);
+
+}
+
+function registrarActivo() {
+
+    var url = "jsp/RegistrarActivo.jsp";
+    var datos = {};
+    var rta = "#ajax";
+    loading(rta);
+    ajax2(url, datos, rta);
+
+}
+
+function actualizarActivo() {
+
+    var url = "jsp/actualizarActivo.jsp";
+    var datos = {};
+    var rta = "#ajax";
+    loading(rta);
+    ajax2(url, datos, rta);
+
+}
+
+function listarActivo() {
+
+    var url = "jsp/ListarActivo.jsp";
     var datos = {};
     var rta = "#ajax";
     loading(rta);
@@ -31,9 +102,9 @@ function recuperar() {
 }
 
 
-function contrase() {
+function listarPorSerie() {
 
-    var url = "Egresado/CambiarContrase.jsp";
+    var url = "jsp/ListarPorSerie.jsp";
     var datos = {};
     var rta = "#ajax";
     loading(rta);
@@ -41,9 +112,9 @@ function contrase() {
 
 }
 
-function registrarEgresado() {
+function listarPorTipo() {
 
-    var url = "jsp/Egresado/Registrar.jsp";
+    var url = "jsp/ListarPorTipo.jsp";
     var datos = {};
     var rta = "#ajax";
     loading(rta);
@@ -51,129 +122,13 @@ function registrarEgresado() {
 
 }
 
-function encuesta() {
+function listarPorFecha() {
 
-    var url = "Egresado/LinkEncuesta.jsp";
+    var url = "jsp/ListarPorFecha.jsp";
     var datos = {};
     var rta = "#ajax";
     loading(rta);
     ajax2(url, datos, rta);
-
-}
-
-function registrarEgresado2() {
-
-    var url = "Egresado/Registrar.jsp";
-    var datos = {};
-    var rta = "#ajax";
-    loading(rta);
-    ajax2(url, datos, rta);
-
-}
-
-function iniciarSesion() {
-
-    var url = "jsp/IniciarSesion.jsp";
-    var datos = {};
-    var rta = "#ajax";
-    loading(rta);
-    ajax2(url, datos, rta);
-
-}
-
-function ofertaLaboral() {
-
-    var url = "jsp/Ofertas.jsp\n\
-";
-    var datos = {};
-    var rta = "#ajax";
-    loading(rta);
-    ajax2(url, datos, rta);
-
-}
-
-
-function experienciasAprendias() {
-
-    var url = "jsp/Egresado/ExperienciasAprendidas.jsp";
-    var datos = {};
-    var rta = "#ajax";
-    loading(rta);
-    ajax2(url, datos, rta);
-
-}
-
-function experienciasAprendias1() {
-
-    var url = "Egresado/ExperienciasAprendidas.jsp";
-    var datos = {};
-    var rta = "#ajax";
-    loading(rta);
-    ajax2(url, datos, rta);
-
-}
-
-function subirExperiencias() {
-
-    var url = "Egresado/SubirExperiencia.jsp";
-    var datos = {};
-    var rta = "#ajax";
-    loading(rta);
-    ajax2(url, datos, rta);
-
-}
-
-
-
-function actualizar() {
-
-    var url = "Egresado/Actualizar.jsp";
-    var datos = {};
-    var rta = "#ajax";
-    loading(rta);
-    ajax2(url, datos, rta);
-
-}
-
-function ofertaLaboral1() {
-
-    var url = "Egresado/Oferta.jsp";
-    var datos = {};
-    var rta = "#ajax";
-    loading(rta);
-    ajax2(url, datos, rta);
-
-}
-
-function evento() {
-
-    var url = "Egresado/Evento.jsp";
-    var datos = {};
-    var rta = "#ajax";
-    loading(rta);
-    ajax2(url, datos, rta);
-
-}
-
-function evento1() {
-
-    var url = "jsp/Evento.jsp";
-    var datos = {};
-    var rta = "#ajax";
-    loading(rta);
-    ajax2(url, datos, rta);
-
-}
-function Cerrar() {
-
-    window.location = "../jsp/Egresado/CerrarSesion.jsp";
-
-
-}
-function Cerrar2() {
-
-    window.location = "../jsp/Administrador/CerrarSesion.jsp";
-
 
 }
 
@@ -234,128 +189,6 @@ function mioferta2() {
 
 }
 
-function galeria() {
-
-    var url = "Egresado/Galeria.jsp";
-    var datos = {};
-    var rta = "#ajax";
-    loading(rta);
-    ajax2(url, datos, rta);
-
-
-}
-
-function galeria1() {
-
-    var url = "jsp/Egresado/Galeria.jsp";
-    var datos = {};
-    var rta = "#ajax";
-    loading(rta);
-    ajax2(url, datos, rta);
-
-    
-
-
-
-}
-
-
-/* Administrador -----------------------------------------------------------------*/
-
-
-function validarEgresados() {
-
-
-    var url = "Administrador/ValidarEgresados.jsp";
-    var datos = {};
-    var rta = "#ajax";
-    loading(rta);
-    ajax2(url, datos, rta);
-
-}
-
-function registrarOferta() {
-
-
-    var url = "Administrador/CrearOferta.jsp";
-    var datos = {};
-    var rta = "#ajax";
-    loading(rta);
-    ajax2(url, datos, rta);
-
-}
-
-function ofertaLaboral2() {
-
-    var url = "Administrador/Oferta.jsp";
-    var datos = {};
-    var rta = "#ajax";
-    loading(rta);
-    ajax2(url, datos, rta);
-
-}
-
-function subirEncuesta() {
-
-    var url = "Administrador/EncuestaCawii.jsp";
-    var datos = {};
-    var rta = "#ajax";
-    loading(rta);
-    ajax2(url, datos, rta);
-
-}
-
-function subirE() {
-
-    var url = "Administrador/SubirEvento.jsp";
-    var datos = {};
-    var rta = "#ajax";
-    loading(rta);
-    ajax2(url, datos, rta);
-
-}
-
-
-
-function correo() {
-
-    var url = "Administrador/EnviarCorreo.jsp";
-    var datos = {};
-    var rta = "#ajax";
-    loading(rta);
-    ajax2(url, datos, rta);
-
-}
-
-function consu() {
-
-    var url = "Administrador/Consultas.jsp";
-    var datos = {};
-    var rta = "#ajax";
-    loading(rta);
-    ajax2(url, datos, rta);
-
-}
-function proconsu() {
-
-    var url = "Administrador/procesarConsulta.jsp";
-    var tipo = document.getElementById("tipo").value;
-    var datos = {tipo: tipo};
-
-    var rta = "#ajax";
-    loading(rta);
-    ajax2(url, datos, rta);
-
-}
-function reporte() {
-
-    var url = "Administrador/Reporte.jsp";
-    var datos = {};
-    var rta = "#ajax";
-    loading(rta);
-    ajax2(url, datos, rta);
-
-}
 function prorer() {
 
     var url = "Administrador/generardorResporte.jsp";
