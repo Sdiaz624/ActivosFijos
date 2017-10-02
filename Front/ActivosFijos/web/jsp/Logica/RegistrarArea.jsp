@@ -4,7 +4,9 @@
     Author     : Sergio
 --%>
 
-<%@page import="net.sf.json.JSONObject"%>
+<%@page import="java.io.OutputStreamWriter"%>
+<%@page import="org.json.JSONObject"%>
+<%@page import="org.json.JSONArray"%>
 <%@page import="java.io.InputStreamReader"%>
 <%@page import="java.io.BufferedReader"%>
 <%@page import="java.net.HttpURLConnection"%>
@@ -14,27 +16,29 @@
 <%
     String nombre = request.getParameter("nombre");
     String ciudad = request.getParameter("ciudad");
-      
-    JSONObject json = new JSONObject();
-    json.put("nombre", nombre );
-    json.put("ciudad", ciudad );    
-    
-    
-    URL url = new URL("http://localhost:8080/Activos/Area/Registrar");
+    URL url = new URL("http://localhost:8080/Activos/Area/Registrar");                              
     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+    conn.setDoOutput(true);
+    conn.setDoInput(true);
     conn.setRequestMethod("POST");
-    conn.getHeaderField("{nombre:"+nombre+""
-                      +"ciudad:"+ciudad+"}");
-    conn.setRequestProperty("Accept", "application/xml");
+    conn.setRequestProperty("Content-Type", "application/json");    
+    conn.setRequestProperty("Accept", "application/json");
+    JSONObject jsonObj = new JSONObject();
+    jsonObj.put("nombre", nombre);
+    jsonObj.put("ciudad", ciudad);  
+    
+ 
+    OutputStreamWriter wr= new OutputStreamWriter(conn.getOutputStream());
+    wr.write(jsonObj.toString());
     
     if (conn.getResponseCode() > 200 && conn.getResponseCode() < 299) {
         BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));      
         %><script> alert("Registrado Correctamente");</script>
-          <script> location.href = "../../index.jsp";</script>
+          <script> history.back();</script>
         <%
     }else {
-        %><script> alert("Error, Intente nuevamente");</script>
-          <script> location.href = "../../index.jsp";</script>
+        %><script> alert(<%=conn.getResponseCode()%>);</script>
+          <script> history.back();</script>
         <%
     }  
 %>

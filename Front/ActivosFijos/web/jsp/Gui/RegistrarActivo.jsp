@@ -8,114 +8,102 @@
 <!DOCTYPE html>
 
 <div>
-    <h2 align="center"> ACTUALIZACION DE DATOS </h2>
-    <form class="form-horizontal" method="post" action="Egresado/procesarActualizacion.jsp" >
+    <h2 align="center"> Registrar Activo </h2>
+    <form class="form-horizontal" method="post" action="jsp/Logica/RegistrarArea.jsp" >
         <div id="tab1" >
                    
             <div class="form-group">
-                <label class="col-md-2 control-label">Direccion</label>
+                <label class="col-md-2 control-label">Nombre</label>
                 <div class="col-md-10">
-                    <input type="Text" class="form-control" name="direccion" placeholder=""   required> 
+                    <input type="Text" class="form-control" name="Nombre" placeholder=""   required> 
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">Celular</label>
+                <label class="col-md-2 control-label">Numero interno</label>
                 <div class="col-md-10">
-                    <input type="number" class="form-control"  name="celular" placeholder=""   required>
+                    <input type="number" class="form-control"  name="Numero" placeholder=""   required>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">Telefono Fijo</label>
+                <label class="col-md-2 control-label">Descripción</label>
                 <div class="col-md-10">
-                    <input type="number" class="form-control" name="fijo" placeholder=""  >
+                    <input type="Text" class="form-control" name="Descripcion" placeholder=""  >
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">Correo Electronico</label>
+                <label class="col-md-2 control-label">Tipo</label>
                 <div class="col-md-10">
-                    <input type="email" class="form-control"  name="correo" placeholder="" required>
-                </div>
-            </div>
-            
-        </div>
-
-        <div id="tab2" style="display:none">
-
-            <div class="form-group">
-                <label class="col-md-2 control-label">Nombre de la Empresa</label>
-                <div class="col-md-10">
-                    <input type="text" class="form-control" name="empresa"  >
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-2 control-label">Actividad de la Empresa</label>
-                <div class="col-md-10">
-                    <input type="text" class="form-control" name="actividad">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-2 control-label">Cargo </label>
-                <div class="col-md-10">
-                    <input type="text" class="form-control" name="cargo"  >
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-2 control-label">Fecha de Ingreso</label>
-                <div class="col-md-10">
-                    <input type="date" class="form-control" name="ingreso" >
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-2 control-label">Direccion</label>
-                <div class="col-md-10">
-                    <input type="text" class="form-control" name="dirempresa" >
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-2 control-label">Ciudad</label>
-                <div class="col-md-10">
-                    <input type="Text" class="form-control" name="ciuempresa" >
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-2 control-label">Telefono</label>
-                <div class="col-md-10">
-                    <input type="number" class="form-control" name="telempresa" >
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-2 control-label">Experiencia Laboral</label>
-                <textarea class="col-md-10" rows="5" name="explaboral" ></textarea>
-            </div>
-
-            
-        </div>
-
-        <div id="tab3" style="display:none">
-            <div class="form-group">
-                <label class="col-md-2 control-form">Tipo de Estudio</label>
-                <div class="col-md-10">
-                    <select name="estudio" >
+                    <select name="tipo" required class="control-label">
                         <option ></option>
-                        <option value="Pregado">Pregrado</option>
-                        <option value="Especializacion">Especializacion</option>
-                        <option value="Maestria">Maestria</option>
-                        <option value="Doctorado">Doctorado</option>
-                        <option value="PostDoctorado">PostDoctorado</option>
+                        <option value="bienes">Bienes</option>
+                        <option value="Maquinaria">Maquinaria</option>
+                        <option value="Material">Material</option>
+                        <option value="Otro">Otro</option>
                     </select>
                 </div> 
-            </div>
+            </div>           
             <div class="form-group">
-                <label class="col-md-2 control-label">Titulo</label>
+                <label class="col-md-2 control-label">Serial</label>
                 <div class="col-md-10">
-                    <input type="Text" class="form-control" name="investigacion" >
+                    <input type="Text" class="form-control"  name="Serial" placeholder="" required>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label">Experiencia Academica</label>
-                <textarea class="col-md-10" rows="5" name="eacademica" ></textarea>
+                <label class="col-md-2 control-label">Peso</label>
+                <div class="col-md-10">
+                    <input type="int" class="form-control"  name="Peso" placeholder="" required>
+                </div>
             </div>
-            <input type="hidden" name="cc" value="">
+            <div class="form-group">
+                <label class="col-md-2 control-label">Alto</label>
+                <div class="col-md-10">
+                    <input type="int" class="form-control"  name="Alto" placeholder="" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Largo</label>
+                <div class="col-md-10">
+                    <input type="int" class="form-control"  name="Largo" placeholder="" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Valor</label>
+                <div class="col-md-10">
+                    <input type="int" class="form-control"  name="Valor" placeholder="" required>
+                </div>
+            </div>
+            <<div class="form-group">
+                <label class="col-md-2 control-label">Fecha Compra</label>
+                <input type="date" name="FechaComp" step="1">
+            </div>           
+            <div class="form-group">
+                <label class="col-md-2 control-label">Fecha Baja</label>
+                <input type="date" name="FechaBaj" step="1">
+            </div>           
+            <div class="form-group">
+                <label class="col-md-2 control-label">Estado</label>
+                <div class="col-md-10">
+                    <input type="int" class="form-control"  name="Estado" placeholder="" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Color</label>
+                <div class="col-md-10">
+                    <input type="int" class="form-control"  name="Color" placeholder="" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Persona</label>
+                <div class="col-md-10">
+                    <input type="int" class="form-control"  namePersonaPeso" placeholder="" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Area</label>
+                <div class="col-md-10">
+                    <input type="int" class="form-control"  name="Area" placeholder="" required>
+                </div>
+            </div>
             
         </div>
             

@@ -22,6 +22,6 @@ public interface AreaSer {
     @POST
     @Path("/Registrar")
     @Consumes({"application/json;charset=UTF-8"})
-    public boolean Registrar(Area area) throws Exception;
-	
+    public void Registrar(Area area) throws Exception;
+   
 }

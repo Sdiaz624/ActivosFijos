@@ -61,7 +61,7 @@ public class AreaDaoImpl implements AreaDao{
      */
     public void Registrar(Area area) throws Exception {
         
-        String sql = "Insert INTO area (nombre) values (?)";
+        String sql = "Insert INTO area (nombre,ciudad) values (?,?)";
         Connection con= null;
 
         try {
@@ -89,7 +89,7 @@ public class AreaDaoImpl implements AreaDao{
      */
     public boolean validaCiudad(String ciudad) throws Exception {
         
-        String sql = "SELECT * FROM area WHERE UPPER(ciudad) = UPPER(?)";
+        String sql = "SELECT * FROM area WHERE UPPER (ciudad) = UPPER(?)";
         Connection con= null;
         ResultSet r;
         

@@ -46,19 +46,17 @@ public class AreaSerImpl implements AreaSer {
      * @return retorna true si registro o false si no
      * @throws Exception lanza excepción
      */
-    public boolean Registrar(Area area) throws Exception {
+    public void Registrar(Area area) throws Exception {
 
-        System.out.println("registrar area");
         try {
-            if(!daoArea.validaCiudad(area.getCiudad())){
+            //if(!daoArea.validaCiudad(area.getCiudad())){
                 daoArea.Registrar(area);
-                return true;
-            }
+            //}
 
         }catch(Exception e){
                 throw e;
         }
-        return false;    
+   
     }
 
 }

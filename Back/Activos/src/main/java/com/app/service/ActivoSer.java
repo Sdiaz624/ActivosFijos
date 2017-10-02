@@ -37,6 +37,7 @@ public interface ActivoSer {
 	public ArrayList<Activo> ListarTipo(@PathParam("tipo") String tipo) throws Exception;
 	
 	@GET
+        //@Path("/ConsultaFecha/{fechaIni}/{fechaFin}")
         @Path("/ConsultaFecha")
         @Produces({"application/json;charset=UTF-8"})
 	public ArrayList<Activo> ListarFecha(@QueryParam("fechaIni") Date fechaIni,

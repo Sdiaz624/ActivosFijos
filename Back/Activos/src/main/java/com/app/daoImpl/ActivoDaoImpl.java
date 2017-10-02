@@ -36,7 +36,7 @@ public class ActivoDaoImpl implements ActivoDao {
                     + "                       Serial,Peso,Alto,Largo,Valor,"
                     + "                       FechaCompra,FechaBaja,Estado"
                     + "                       Color,Persona)"
-                    + "          values (?,?,?,?,?,?,?,?,?,trunc(?),trunc(?),?,?,?)";
+                    + "          values (?,?,?,?,?,?,?,?,?,DATE(?),DATE(?),?,?,?)";
                 
                 try {
 			con = dataSource.getConnection();
@@ -71,7 +71,7 @@ public class ActivoDaoImpl implements ActivoDao {
                     + "                       Serial,Peso,Alto,Largo,Valor,"
                     + "                       FechaCompra,FechaBaja,Estado"
                     + "                       Color,Area)"
-                    + "          values (?,?,?,?,?,?,?,?,?,trunc(?),trunc(?),?,?,?)";
+                    + "          values (?,?,?,?,?,?,?,?,?,DATE(?),DATE(?),?,?,?)";
                 
                 try {
 			con = dataSource.getConnection();
@@ -107,7 +107,7 @@ public class ActivoDaoImpl implements ActivoDao {
                     + "                       Serial,Peso,Alto,Largo,Valor,"
                     + "                       FechaCompra,FechaBaja,Estado"
                     + "                       Color)"
-                    + "          values (?,?,?,?,?,?,?,?,?,trunc(?),Trunc(?),?,?)";
+                    + "          values (?,?,?,?,?,?,?,?,?,DATE(?),DATE(?),?,?)";
                 
                 try {
 			con = dataSource.getConnection();
@@ -159,8 +159,8 @@ public class ActivoDaoImpl implements ActivoDao {
                     + "                  Alto = ?,"
                     + "                  Largo = ?,"
                     + "                  Valor = ?,"
-                    + "                  FechaCompra = trunc (?),"
-                    + "                  FechaBaja = trunc (?),"
+                    + "                  FechaCompra = DATE (?),"
+                    + "                  FechaBaja = DATE (?),"
                     + "                  Estado = ?"
                     + "                  Color = ?,"
                     + "                  Persona = ?,"
@@ -206,8 +206,8 @@ public class ActivoDaoImpl implements ActivoDao {
                     + "                  Alto = ?,"
                     + "                  Largo = ?,"
                     + "                  Valor = ?,"
-                    + "                  FechaCompra = trunc(?),"
-                    + "                  FechaBaja = trunc(?),"
+                    + "                  FechaCompra = DATE(?),"
+                    + "                  FechaBaja = DATE(?),"
                     + "                  Estado = ?"
                     + "                  Color = ?,"
                     + "                  Persona = null,"
@@ -254,8 +254,8 @@ public class ActivoDaoImpl implements ActivoDao {
                     + "                  Alto = ?,"
                     + "                  Largo = ?,"
                     + "                  Valor = ?,"
-                    + "                  FechaCompra = trunc(?),"
-                    + "                  FechaBaja = trunc(?),"
+                    + "                  FechaCompra = DATE(?),"
+                    + "                  FechaBaja = DATE(?),"
                     + "                  Estado = ?"
                     + "                  Color = ?,"
                     + "                  Persona = null,"
@@ -415,7 +415,7 @@ public ArrayList<Activo> ListarFecha(Date fechaIni, Date fechaFin) throws Except
 	 
             ArrayList<Activo> activos = new ArrayList<Activo>();
 		
-            String sql = "SELECT * FROM activos WHERE FechaCompra between trunc (?) and trunc(?) ";
+            String sql = "SELECT * FROM activos WHERE FechaCompra between DATE (?) and DATE(?) ";
             Connection con= null;
             ResultSet r;
                 try {

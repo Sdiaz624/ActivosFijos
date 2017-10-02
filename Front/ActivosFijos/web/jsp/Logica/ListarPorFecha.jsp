@@ -5,6 +5,8 @@
 --%>
 
 
+
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="org.json.JSONArray"%>
 <%@page import="org.json.JSONObject"%>
 <%@page import="java.io.InputStream"%>
@@ -19,15 +21,20 @@
 
 
 <%
-    String serie = request.getParameter("serie");
-                       
-    URL url = new URL("http://localhost:8080/Activos/Activo/ConsultaSerial/"+serie);    
+    String Ini = request.getParameter("FechaIni");
+    String Fin = request.getParameter("FechaFin");    
+    
+    SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd"); 
+    java.util.Date FechaIni =sdf.parse(Ini); 
+    java.util.Date FechaFin =sdf.parse(Fin); 
+    
+    URL url = new URL("http://localhost:8080/Activos/Activo/ConsultaFecha/"+Ini+"/"+Fin);                              
+    //URL url = new URL("http://localhost:8080/Activos/Activo/ConsultaFecha?fechaIni="+FechaIni+"&fechaFin="+FechaFin);    
     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
     conn.setDoOutput(true);
     conn.setDoInput(true);
     conn.setRequestMethod("GET");
     conn.setRequestProperty("Content-Type", "application/json");    
-    //conn.setRequestProperty("Accept", "application/xml");
     conn.setRequestProperty("Accept", "application/json");
     JSONArray jsonObj = null;
           
@@ -97,7 +104,7 @@
         br.close();
     }else{
         %><script> alert("Error, Intente nuevamente");</script>
-          <script> location.href = "/index.jsp";</script><%
+          <script> history.back();</script><%
     }  
     conn.disconnect();
 %>
