@@ -32,29 +32,29 @@ public class ActivoDaoImpl implements ActivoDao {
             
             if (activo.getPersona()>0){
                 String sqlpersona = "Insert "
-                    + "         INTO activos(Nombre,NumeroInt,Descripcion,Tipo,"
+                    + "         INTO activos(Nombre,NumeroInt,Tipo,"
                     + "                       Serial,Peso,Alto,Largo,Valor,"
-                    + "                       FechaCompra,FechaBaja,Estado"
+                    + "                       FechaCompra,FechaBaja,Estado,"
                     + "                       Color,Persona)"
-                    + "          values (?,?,?,?,?,?,?,?,?,DATE(?),DATE(?),?,?,?)";
+                    + "          values (?,?,?,?,?,?,?,?,DATE(?),DATE(?),?,?,?)";
                 
                 try {
 			con = dataSource.getConnection();
 			PreparedStatement ps = con.prepareStatement(sqlpersona);
 			ps.setString(1,activo.getNombre());
 			ps.setInt(2,activo.getNumeroInt());
-			ps.setString(3,activo.getDescription());
-                        ps.setString(4,activo.getTipo());
-			ps.setString(5,activo.getSerial());
-                        ps.setFloat(6, activo.getPeso());
-                        ps.setFloat(7, activo.getAlto());
-                        ps.setFloat(8, activo.getLargo());
-                        ps.setFloat(9, activo.getValor());                        
-                        ps.setDate(10,activo.getFechaCompra());
-                        ps.setDate(11,activo.getFechaBaja());
-                        ps.setString(12,activo.getEstado());
-                        ps.setString(13,activo.getColor());
-                        ps.setInt(14,activo.getPersona());
+			
+                        ps.setString(3,activo.getTipo());
+			ps.setString(4,activo.getSerial());
+                        ps.setFloat(5, activo.getPeso());
+                        ps.setFloat(6, activo.getAlto());
+                        ps.setFloat(7, activo.getLargo());
+                        ps.setFloat(8, activo.getValor());                        
+                        ps.setDate(9,activo.getFechaCompra());
+                        ps.setDate(10,activo.getFechaBaja());
+                        ps.setString(11,activo.getEstado());
+                        ps.setString(12,activo.getColor());
+                        ps.setInt(13,activo.getPersona());
 			ps.executeUpdate();
 			ps.close();
 		}catch(Exception e) {
@@ -67,29 +67,29 @@ public class ActivoDaoImpl implements ActivoDao {
             }else if (activo.getArea()>0){
                 
                 String sqlpersona = "Insert "
-                    + "         INTO activos(Nombre,NumeroInt,Descripcion,Tipo,"
+                    + "         INTO activos(Nombre,NumeroInt,Tipo,"
                     + "                       Serial,Peso,Alto,Largo,Valor,"
-                    + "                       FechaCompra,FechaBaja,Estado"
+                    + "                       FechaCompra,FechaBaja,Estado,"
                     + "                       Color,Area)"
-                    + "          values (?,?,?,?,?,?,?,?,?,DATE(?),DATE(?),?,?,?)";
+                    + "          values (?,?,?,?,?,?,?,?,DATE(?),DATE(?),?,?,?)";
                 
                 try {
 			con = dataSource.getConnection();
 			PreparedStatement ps = con.prepareStatement(sqlpersona);
 			ps.setString(1,activo.getNombre());
 			ps.setInt(2,activo.getNumeroInt());
-			ps.setString(3,activo.getDescription());
-                        ps.setString(4,activo.getTipo());
-			ps.setString(5,activo.getSerial());
-                        ps.setFloat(6, activo.getPeso());
-                        ps.setFloat(7, activo.getAlto());
-                        ps.setFloat(8, activo.getLargo());
-                        ps.setFloat(9, activo.getValor());                        
-                        ps.setDate(10,activo.getFechaCompra());
-                        ps.setDate(11,activo.getFechaBaja());
-                        ps.setString(12,activo.getEstado());
-                        ps.setString(13,activo.getColor());
-                        ps.setInt(14,activo.getArea());
+			
+                        ps.setString(3,activo.getTipo());
+			ps.setString(4,activo.getSerial());
+                        ps.setFloat(5, activo.getPeso());
+                        ps.setFloat(6, activo.getAlto());
+                        ps.setFloat(7, activo.getLargo());
+                        ps.setFloat(8, activo.getValor());                        
+                        ps.setDate(9,activo.getFechaCompra());
+                        ps.setDate(10,activo.getFechaBaja());
+                        ps.setString(11,activo.getEstado());
+                        ps.setString(12,activo.getColor());
+                        ps.setInt(13,activo.getArea());
 			ps.executeUpdate();
 			ps.close();
 		}catch(Exception e) {
@@ -103,28 +103,28 @@ public class ActivoDaoImpl implements ActivoDao {
             }else{
                 
                 String sqlpersona = "Insert "
-                    + "         INTO activos(Nombre,NumeroInt,Descripcion,Tipo,"
+                    + "         INTO activos(Nombre,NumeroInt,Tipo,"
                     + "                       Serial,Peso,Alto,Largo,Valor,"
-                    + "                       FechaCompra,FechaBaja,Estado"
+                    + "                       FechaCompra,FechaBaja,Estado,"
                     + "                       Color)"
-                    + "          values (?,?,?,?,?,?,?,?,?,DATE(?),DATE(?),?,?)";
+                    + "          values (?,?,?,?,?,?,?,?,DATE(?),DATE(?),?,?)";
                 
                 try {
 			con = dataSource.getConnection();
 			PreparedStatement ps = con.prepareStatement(sqlpersona);
 			ps.setString(1,activo.getNombre());
 			ps.setInt(2,activo.getNumeroInt());
-			ps.setString(3,activo.getDescription());
-                        ps.setString(4,activo.getTipo());
-			ps.setString(5,activo.getSerial());
-                        ps.setFloat(6, activo.getPeso());
-                        ps.setFloat(7, activo.getAlto());
-                        ps.setFloat(8, activo.getLargo());
-                        ps.setFloat(9, activo.getValor());                        
-                        ps.setDate(10,activo.getFechaCompra());
-                        ps.setDate(11,activo.getFechaBaja());
-                        ps.setString(12,activo.getEstado());
-                        ps.setString(13,activo.getColor());
+			
+                        ps.setString(3,activo.getTipo());
+			ps.setString(4,activo.getSerial());
+                        ps.setFloat(5, activo.getPeso());
+                        ps.setFloat(6, activo.getAlto());
+                        ps.setFloat(7, activo.getLargo());
+                        ps.setFloat(8, activo.getValor());                        
+                        ps.setDate(9,activo.getFechaCompra());
+                        ps.setDate(10,activo.getFechaBaja());
+                        ps.setString(11,activo.getEstado());
+                        ps.setString(12,activo.getColor());
                         ps.executeUpdate();
 			ps.close();
 		}catch(Exception e) {
@@ -152,7 +152,6 @@ public class ActivoDaoImpl implements ActivoDao {
                 String sqlpersona = "UPDATE activos "
                     + "              SET Nombre = ?,"
                     + "                  NumeroInt = ?,"
-                    + "                  Descripcion = ?,"
                     + "                  Tipo = ?,"
                     + "                  Serial = ?,"
                     + "                  Peso = ?,"
@@ -161,10 +160,10 @@ public class ActivoDaoImpl implements ActivoDao {
                     + "                  Valor = ?,"
                     + "                  FechaCompra = DATE (?),"
                     + "                  FechaBaja = DATE (?),"
-                    + "                  Estado = ?"
+                    + "                  Estado = ?,"
                     + "                  Color = ?,"
                     + "                  Persona = ?,"
-                    + "                  Area = null)"
+                    + "                  Area = null"
                     + "               WHERE id = ?";
                 
                 try {
@@ -172,19 +171,19 @@ public class ActivoDaoImpl implements ActivoDao {
 			PreparedStatement ps = con.prepareStatement(sqlpersona);
 			ps.setString(1,activo.getNombre());
 			ps.setInt(2,activo.getNumeroInt());
-			ps.setString(3,activo.getDescription());
-                        ps.setString(4,activo.getTipo());
-			ps.setString(5,activo.getSerial());
-                        ps.setFloat(6, activo.getPeso());
-                        ps.setFloat(7, activo.getAlto());
-                        ps.setFloat(8, activo.getLargo());
-                        ps.setFloat(9, activo.getValor());                        
-                        ps.setDate(10,activo.getFechaCompra());
-                        ps.setDate(11,activo.getFechaBaja());
-                        ps.setString(12,activo.getEstado());
-                        ps.setString(13,activo.getColor());
-                        ps.setInt(14,activo.getPersona());
-                        ps.setInt(15,activo.getId());                        
+			
+                        ps.setString(3,activo.getTipo());
+			ps.setString(4,activo.getSerial());
+                        ps.setFloat(5, activo.getPeso());
+                        ps.setFloat(6, activo.getAlto());
+                        ps.setFloat(7, activo.getLargo());
+                        ps.setFloat(8, activo.getValor());                        
+                        ps.setDate(9,activo.getFechaCompra());
+                        ps.setDate(10,activo.getFechaBaja());
+                        ps.setString(11,activo.getEstado());
+                        ps.setString(12,activo.getColor());
+                        ps.setInt(13,activo.getPersona());
+                        ps.setInt(14,activo.getId());                        
 			ps.executeUpdate();
 			ps.close();
 		}catch(Exception e) {
@@ -199,7 +198,6 @@ public class ActivoDaoImpl implements ActivoDao {
                 String sqlpersona = "UPDATE activos "
                     + "              SET Nombre = ?,"
                     + "                  NumeroInt = ?,"
-                    + "                  Descripcion = ?,"
                     + "                  Tipo = ?,"
                     + "                  Serial = ?,"
                     + "                  Peso = ?,"
@@ -208,10 +206,10 @@ public class ActivoDaoImpl implements ActivoDao {
                     + "                  Valor = ?,"
                     + "                  FechaCompra = DATE(?),"
                     + "                  FechaBaja = DATE(?),"
-                    + "                  Estado = ?"
+                    + "                  Estado = ?,"
                     + "                  Color = ?,"
                     + "                  Persona = null,"
-                    + "                  Area = ?)"
+                    + "                  Area = ?"
                     + "               WHERE id = ?";
                 
                 try {
@@ -219,19 +217,19 @@ public class ActivoDaoImpl implements ActivoDao {
 			PreparedStatement ps = con.prepareStatement(sqlpersona);
 			ps.setString(1,activo.getNombre());
 			ps.setInt(2,activo.getNumeroInt());
-			ps.setString(3,activo.getDescription());
-                        ps.setString(4,activo.getTipo());
-			ps.setString(5,activo.getSerial());
-                        ps.setFloat(6, activo.getPeso());
-                        ps.setFloat(7, activo.getAlto());
-                        ps.setFloat(8, activo.getLargo());
-                        ps.setFloat(9, activo.getValor());                        
-                        ps.setDate(10,activo.getFechaCompra());
-                        ps.setDate(11,activo.getFechaBaja());
-                        ps.setString(12,activo.getEstado());
-                        ps.setString(13,activo.getColor());
-                        ps.setInt(14,activo.getArea());
-                        ps.setInt(15,activo.getId());                        
+			
+                        ps.setString(3,activo.getTipo());
+			ps.setString(4,activo.getSerial());
+                        ps.setFloat(5, activo.getPeso());
+                        ps.setFloat(6, activo.getAlto());
+                        ps.setFloat(7, activo.getLargo());
+                        ps.setFloat(8, activo.getValor());                        
+                        ps.setDate(9,activo.getFechaCompra());
+                        ps.setDate(10,activo.getFechaBaja());
+                        ps.setString(11,activo.getEstado());
+                        ps.setString(12,activo.getColor());
+                        ps.setInt(13,activo.getArea());
+                        ps.setInt(14,activo.getId());                        
 			ps.executeUpdate();
 			ps.close();
 		}catch(Exception e) {
@@ -247,7 +245,6 @@ public class ActivoDaoImpl implements ActivoDao {
                 String sqlpersona = "UPDATE activos "
                     + "              SET Nombre = ?,"
                     + "                  NumeroInt = ?,"
-                    + "                  Descripcion = ?,"
                     + "                  Tipo = ?,"
                     + "                  Serial = ?,"
                     + "                  Peso = ?,"
@@ -256,10 +253,10 @@ public class ActivoDaoImpl implements ActivoDao {
                     + "                  Valor = ?,"
                     + "                  FechaCompra = DATE(?),"
                     + "                  FechaBaja = DATE(?),"
-                    + "                  Estado = ?"
+                    + "                  Estado = ?,"
                     + "                  Color = ?,"
                     + "                  Persona = null,"
-                    + "                  Area = null)"
+                    + "                  Area = null"
                     + "               WHERE id = ?";
                 
                 try {
@@ -267,18 +264,17 @@ public class ActivoDaoImpl implements ActivoDao {
 			PreparedStatement ps = con.prepareStatement(sqlpersona);
 			ps.setString(1,activo.getNombre());
 			ps.setInt(2,activo.getNumeroInt());
-			ps.setString(3,activo.getDescription());
-                        ps.setString(4,activo.getTipo());
-			ps.setString(5,activo.getSerial());
-                        ps.setFloat(6, activo.getPeso());
-                        ps.setFloat(7, activo.getAlto());
-                        ps.setFloat(8, activo.getLargo());
-                        ps.setFloat(9, activo.getValor());                        
-                        ps.setDate(10,activo.getFechaCompra());
-                        ps.setDate(11,activo.getFechaBaja());
-                        ps.setString(12,activo.getEstado());
-                        ps.setString(13,activo.getColor());
-                        ps.setInt(14,activo.getId());                        
+			                       ps.setString(3,activo.getTipo());
+			ps.setString(4,activo.getSerial());
+                        ps.setFloat(5, activo.getPeso());
+                        ps.setFloat(6, activo.getAlto());
+                        ps.setFloat(7, activo.getLargo());
+                        ps.setFloat(8, activo.getValor());                        
+                        ps.setDate(9,activo.getFechaCompra());
+                        ps.setDate(10,activo.getFechaBaja());
+                        ps.setString(11,activo.getEstado());
+                        ps.setString(12,activo.getColor());
+                        ps.setInt(13,activo.getId());                        
 			ps.executeUpdate();
 			ps.close();
 		}catch(Exception e) {
@@ -318,7 +314,7 @@ public class ActivoDaoImpl implements ActivoDao {
 				activo.setId(r.getInt("id"));
 				activo.setNombre(r.getString("Nombre"));
                                 activo.setNumeroInt(r.getInt("NumeroInt"));
-				activo.setDescription(r.getString("Descripcion"));
+				
                                 activo.setTipo(r.getString("Tipo"));
                                 activo.setSerial(r.getString("Serial"));
                                 activo.setPeso(r.getFloat("Peso"));
@@ -373,7 +369,7 @@ public ArrayList<Activo> ListarTipo(String tipo) throws Exception {
                         activo.setId(r.getInt("id"));
                         activo.setNombre(r.getString("Nombre"));
                         activo.setNumeroInt(r.getInt("NumeroInt"));
-                        activo.setDescription(r.getString("Descripcion"));
+                
                         activo.setTipo(r.getString("Tipo"));
                         activo.setSerial(r.getString("Serial"));
                         activo.setPeso(r.getFloat("Peso"));
@@ -432,7 +428,7 @@ public ArrayList<Activo> ListarFecha(Date fechaIni, Date fechaFin) throws Except
 				activo.setId(r.getInt("id"));
 				activo.setNombre(r.getString("Nombre"));
                                 activo.setNumeroInt(r.getInt("NumeroInt"));
-				activo.setDescription(r.getString("Descripcion"));
+				
                                 activo.setTipo(r.getString("Tipo"));
                                 activo.setSerial(r.getString("Serial"));
                                 activo.setPeso(r.getFloat("Peso"));
@@ -488,8 +484,7 @@ public ArrayList<Activo> ListarSerial(String serial) throws Exception {
                         activo.setId(r.getInt("id"));
                         activo.setNombre(r.getString("Nombre"));
                         activo.setNumeroInt(r.getInt("NumeroInt"));
-                        activo.setDescription(r.getString("Descripcion"));
-                        activo.setTipo(r.getString("Tipo"));
+                                        activo.setTipo(r.getString("Tipo"));
                         activo.setSerial(r.getString("Serial"));
                         activo.setPeso(r.getFloat("Peso"));
                         activo.setAlto(r.getFloat("Alto"));

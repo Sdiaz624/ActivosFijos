@@ -24,6 +24,7 @@
     conn.setRequestProperty("Content-Type", "application/json");    
     conn.setRequestProperty("Accept", "application/json");
     JSONObject jsonObj = new JSONObject();
+    jsonObj.put("id", 0);
     jsonObj.put("nombre", nombre);
     jsonObj.put("ciudad", ciudad);  
     

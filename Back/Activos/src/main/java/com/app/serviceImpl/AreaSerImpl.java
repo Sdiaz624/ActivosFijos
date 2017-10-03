@@ -49,14 +49,15 @@ public class AreaSerImpl implements AreaSer {
     public void Registrar(Area area) throws Exception {
 
         try {
-            //if(!daoArea.validaCiudad(area.getCiudad())){
+            if(!daoArea.validaCiudad(area.getCiudad())){
                 daoArea.Registrar(area);
-            //}
+            }
 
         }catch(Exception e){
                 throw e;
-        }
-   
+        }  
+        
+        
     }
 
 }

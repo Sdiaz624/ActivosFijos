@@ -41,7 +41,7 @@ public interface ActivoSer {
         @Path("/ConsultaFecha")
         @Produces({"application/json;charset=UTF-8"})
 	public ArrayList<Activo> ListarFecha(@QueryParam("fechaIni") Date fechaIni,
-                                             @QueryParam("fechaFin") Date fechaFin) throws Exception;
+                                         @QueryParam("fechaFin") Date fechaFin) throws Exception;
 	
 	@GET
         @Path("/ConsultaSerial/{serial}")

@@ -25,7 +25,7 @@ public class AreaDaoImpl implements AreaDao{
         
         ArrayList<Area> areas = new ArrayList<Area>();
 		
-        String sql = "SELECT * FROM area";
+        String sql = "SELECT * FROM area WHERE id != 0";
         Connection con= null;
         ResultSet r;
 
@@ -89,7 +89,7 @@ public class AreaDaoImpl implements AreaDao{
      */
     public boolean validaCiudad(String ciudad) throws Exception {
         
-        String sql = "SELECT * FROM area WHERE UPPER (ciudad) = UPPER(?)";
+        String sql = "SELECT * FROM area WHERE UPPER(ciudad) = UPPER(?)";
         Connection con= null;
         ResultSet r;
         
@@ -103,6 +103,7 @@ public class AreaDaoImpl implements AreaDao{
 
             while (r.next()) {
                 exists = true;
+                
             }
             ps.close();
         }catch(Exception e) {

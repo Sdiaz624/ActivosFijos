@@ -1,0 +1,16 @@
+com\app\dao\ActivoDao.class
+com\app\dao\PersonaDao.class
+com\app\beans\Activo.class
+com\app\service\AreaSer.class
+com\app\serviceImpl\PersonaServImpl.class
+com\app\service\PersonaSer.class
+com\app\config\AppConfig.class
+com\app\dao\AreaDao.class
+com\app\daoImpl\PersonaDaoImpl.class
+com\app\daoImpl\ActivoDaoImpl.class
+com\app\beans\Area.class
+com\app\daoImpl\AreaDaoImpl.class
+com\app\service\ActivoSer.class
+com\app\serviceImpl\AreaSerImpl.class
+com\app\serviceImpl\ActivoSerImpl.class
+com\app\beans\Persona.class

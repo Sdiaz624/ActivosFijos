@@ -10,7 +10,6 @@ public class Activo {
 	private int id; 
 	private String nombre;
 	private int numeroInt;
-	private String Description;
 	private String tipo;
 	private String serial;
 	private float peso;
@@ -50,11 +49,10 @@ public class Activo {
          * @param persona 
          * @param area
          */    
-	public Activo(int id, String nombre, int numeroInt, String Description, String tipo, String serial, float peso, float alto, float largo, float valor, Date fechaCompra, Date fechaBaja, String estado, String color, int persona, int area) {
+	public Activo(int id, String nombre, int numeroInt, String tipo, String serial, float peso, float alto, float largo, float valor, Date fechaCompra, Date fechaBaja, String estado, String color, int persona, int area) {
 		this.id = id;
 		this.nombre = nombre;
 		this.numeroInt = numeroInt;
-		this.Description = Description;
 		this.tipo = tipo;
 		this.serial = serial;
 		this.peso = peso;
@@ -108,12 +106,7 @@ public class Activo {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getDescription() {
-		return Description;
-	}
-	public void setDescription(String description) {
-		Description = description;
-	}
+	
 	public String getTipo() {
 		return tipo;
 	}

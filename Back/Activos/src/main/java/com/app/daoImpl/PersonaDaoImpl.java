@@ -23,7 +23,7 @@ public class PersonaDaoImpl implements PersonaDao {
     
         ArrayList<Persona> personas = new ArrayList<Persona>();
 		
-        String sql = "SELECT * FROM persona";
+        String sql = "SELECT * FROM persona WHERE id != 0";
         Connection con= null;
         ResultSet r;
 

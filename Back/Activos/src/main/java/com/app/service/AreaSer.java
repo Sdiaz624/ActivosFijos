@@ -18,7 +18,8 @@ public interface AreaSer {
     @Path("/Consulta")
     @Produces({"application/json;charset=UTF-8"})
     public ArrayList<Area> ListarTodas() throws Exception;
-	
+
+    
     @POST
     @Path("/Registrar")
     @Consumes({"application/json;charset=UTF-8"})
