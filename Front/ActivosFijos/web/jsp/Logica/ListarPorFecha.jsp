@@ -24,6 +24,8 @@
     String Ini = request.getParameter("FechaIni");
     String Fin = request.getParameter("FechaFin");    
     
+    //String urlParameters = Piping.serialize(request);
+    
     SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd"); 
     java.util.Date FechaIni =sdf.parse(Ini); 
     java.util.Date FechaFin =sdf.parse(Fin); 

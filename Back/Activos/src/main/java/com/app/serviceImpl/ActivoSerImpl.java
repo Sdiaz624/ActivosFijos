@@ -50,11 +50,11 @@ public class ActivoSerImpl implements ActivoSer{
     public void Actualizar(Activo activo) throws Exception {
 
         try {
-		    if(!daoActivo.validaNumInterno(activo.getNumeroInt())){	
-		        if (activo.getFechaCompra().before(activo.getFechaBaja())){
-		            daoActivo.Actualizar(activo);
-		        }  
-		    }
+            if(!daoActivo.validaNumInterno(activo.getNumeroInt())){	
+                if (activo.getFechaCompra().before(activo.getFechaBaja())){
+                    daoActivo.Actualizar(activo);
+                }  
+            }
         }catch(Exception e){
                 throw e;
         }

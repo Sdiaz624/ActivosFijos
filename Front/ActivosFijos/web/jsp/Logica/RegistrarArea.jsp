@@ -21,17 +21,18 @@
     conn.setDoOutput(true);
     conn.setDoInput(true);
     conn.setRequestMethod("POST");
-    conn.setRequestProperty("Content-Type", "application/json");    
-    conn.setRequestProperty("Accept", "application/json");
+    conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+    //conn.setRequestProperty("Accept", "application/json");
     JSONObject jsonObj = new JSONObject();
     jsonObj.put("id", 0);
-    jsonObj.put("nombre", nombre);
     jsonObj.put("ciudad", ciudad);  
-    
+    jsonObj.put("nombre", nombre);
+    String json =  jsonObj.toString();
  
     OutputStreamWriter wr= new OutputStreamWriter(conn.getOutputStream());
     wr.write(jsonObj.toString());
-    
+        %><script> alert(<%=jsonObj.toString()%>);</script><%
+    wr.flush();
     if (conn.getResponseCode() > 200 && conn.getResponseCode() < 299) {
         BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));      
         %><script> alert("Registrado Correctamente");</script>
